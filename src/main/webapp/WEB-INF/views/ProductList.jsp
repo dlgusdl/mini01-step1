@@ -6,9 +6,10 @@ pageEncoding="UTF-8"%>
     <table class="table table-striped">
         <thead>
             <tr>
-                <th>이름</th>
-                <th>가격</th>
-                <th>재고</th>
+                <th>상품 번호</th>
+                <th>상품 이름</th>
+                <th>상품 가격</th>
+                <th>상품 재고</th>
             </tr>
         </thead>
         <tbody>
