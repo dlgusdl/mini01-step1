@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="site.metacoding.firstapp.domain.ProductDao">
+<mapper namespace="site.metacoding.firstapp.domain.ProductRepository">
 
 	<select id="findById" resultType="site.metacoding.firstapp.domain.Product">
     SELECT * FROM product WHERE product_id = #{productId}
@@ -19,7 +19,7 @@
 
   <update id="update">
     UPDATE product SET product_name = #{productName},
-    product_price = #{productPrice},
+    product_price = #{productPrice}, 
     product_qty = #{productQty}
     WHERE product_id = #{productId}
 	</update>

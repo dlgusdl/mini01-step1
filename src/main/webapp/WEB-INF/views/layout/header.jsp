@@ -40,20 +40,10 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                 <div class="collapse navbar-collapse" id="collapsibleNavbar">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="">상품등록페이지</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="">상품목록페이지</a>
                         </li>
-
                         <li class="nav-item">
-                            <a class="nav-link" href="">상품상세보기페이지</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="">상품삭제페이지</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="">상품수정페이지</a>
+                            <a class="nav-link" href="">상품등록페이지</a>
                         </li>
                     </ul>
                 </div>

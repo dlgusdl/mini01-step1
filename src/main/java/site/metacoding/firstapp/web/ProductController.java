@@ -7,7 +7,22 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class ProductController {
 
     @GetMapping("/")
-    public String home() {
-        return "ProductList";
+    public String list() {
+        return "productList";
+    }
+
+    @GetMapping("/product/{id}")
+    public String detail() {
+        return "productDetail";
+    }
+
+    @GetMapping("/product/{id}/updateForm")
+    public String updateForm() {
+        return "productUpdateForm";
+    }
+
+    @GetMapping("/product/insertForm")
+    public String insertForm() {
+        return "productInsertForm";
     }
 }

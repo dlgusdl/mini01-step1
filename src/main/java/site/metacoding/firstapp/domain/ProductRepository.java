@@ -2,7 +2,10 @@ package site.metacoding.firstapp.domain;
 
 import java.util.List;
 
-public interface ProductDao {
+import org.apache.ibatis.annotations.Mapper;
+
+@Mapper
+public interface ProductRepository {
     public Product findById(Integer productId);
 
     public List<Product> findAll();
