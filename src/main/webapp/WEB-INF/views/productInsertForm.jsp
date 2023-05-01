@@ -13,7 +13,7 @@
 		<div class="mb-3 mt-3">
 			상품수량 : <input id="pty" name="pty" type="text" placeholder="상품 수량을 적어주세요">
 		</div>
-		<button type="submit" class="btn btn-primary">상품등록완료</button>
+		<button type="submit" class="btn btn-primary" action="/product">상품등록완료</button>
 	</form>
 </div>
 

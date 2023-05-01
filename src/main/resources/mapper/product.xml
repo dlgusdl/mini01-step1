@@ -2,31 +2,27 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="site.metacoding.firstapp.domain.ProductRepository">
+<mapper namespace="site.metacoding.firstapp.model.poductRepository">
 
-	<select id="findById" resultType="site.metacoding.firstapp.domain.Product">
-    SELECT * FROM product WHERE product_id = #{productId}
-	</select>
+  <select id = "findById" resultType = "site.metacoding.firstapp.model.Product">
+        select * from product where id = #{id}
+    </select>
 
-  <select id="findAll" resultType="site.metacoding.firstapp.domain.Product">
-    SELECT * FROM product ORDER BY product_id DESC
-	</select>
+ <select id="findAll" resultType="site.metacoding.firstapp.model.Product">
+    select * from product
+</select>
 
-  <insert id="insert" useGeneratedKeys="true" keyProperty="productId">
-    INSERT INTO product(product_name, product_price, product_qty, created_at) 
-    VALUES(#{productName}, #{productPrice}, #{productQty}, NOW())
-	</insert>
+  <insert id = "insert">
+        insert into product (name, price, qty, created_at) values (#{name}, #{price}, #{qty}, now())
+    </insert>
 
-  <update id="update">
-    UPDATE product SET product_name = #{productName},
-    product_price = #{productPrice}, 
-    product_qty = #{productQty}
-    WHERE product_id = #{productId}
-	</update>
+  <update id = "update">
+        update product set name = #{name}, price = #{price}, qty = #{qty} where id = #{id}
+    </update>
 
-  <delete id="deleteById">
-    DELETE FROM product WHERE product_id = #{productId}
-	</delete>
+  <delete id = "deleteById">
+        delete from product where id = #{id}
+    </delete>
 
 </mapper>
 

@@ -1,7 +1,7 @@
 create table product(
-    id int primary KEY auto_increment,
-    name varchar(20) NOT null UNIQUE,
-    price INT NOT null,
-    qty INT NOT null,
-    created_at TIMESTAMP NOT null
+    product_id int primary key auto_increment,
+    product_name varchar(20) null unique,
+    product_price int null,
+    product_qty int null,
+    created_at timestamp not null
 );

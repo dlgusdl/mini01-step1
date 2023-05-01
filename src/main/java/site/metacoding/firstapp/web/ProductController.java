@@ -1,13 +1,16 @@
 package site.metacoding.firstapp.web;
 
-import org.h2.schema.Domain;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import site.metacoding.firstapp.domain.Product;
-import site.metacoding.firstapp.domain.ProductRepository;
+import site.metacoding.firstapp.model.Product;
+import site.metacoding.firstapp.model.ProductRepository;
 
 @Controller
 public class ProductController {
@@ -15,14 +18,20 @@ public class ProductController {
     @Autowired
     private ProductRepository productRepository;
 
-    @GetMapping("/product")
-    public String list(Domain domain) {
+    @GetMapping({ "/product", "/" })
+    public String List(Model model) {
+        // List<Product> productList = productRepository.findAll();
+        // domain.
+        List<Product> productList = productRepository.findAll();
+        model.addAttribute("productList", productList);
 
         return "productList";
     }
 
     @GetMapping("/product/{id}")
-    public String detail() {
+    public String detail(@PathVariable Integer id, Model model) {
+        Product product = productRepository.findById(id);
+        model.addAttribute("detail", productRepository.findById(id));
         return "productDetail";
     }
 
@@ -33,6 +42,7 @@ public class ProductController {
 
     @GetMapping("/product/insertForm")
     public String insertForm() {
+
         return "productInsertForm";
     }
 

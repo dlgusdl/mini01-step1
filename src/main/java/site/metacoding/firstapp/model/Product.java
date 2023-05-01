@@ -1,4 +1,4 @@
-package site.metacoding.firstapp.domain;
+package site.metacoding.firstapp.model;
 
 import java.sql.Timestamp;
 
