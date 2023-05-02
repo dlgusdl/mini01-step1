@@ -1,18 +1,36 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ include file="layout/header.jsp"%>
-<div class="container">
-	<form action="/product/detail" method="post">
-		<div class="mb-3 mt-3" >상품명 : 1111</div>
-		<div class="mb-3 mt-3">상품가격 : 111</div>
-		<div class="mb-3 mt-3">상품수량 : 111</div>
-		<span><a href="/product/1/updateForm" class="btn btn-warning">수정하러가기</a></span>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+	<%@ include file="layout/header.jsp" %>
+		<div class="center">
+			<div style="margin: 20px;">
+				<table border="1" style="width: 1000px; height: 170px; text-align: center; margin-left: 450px;">
+					<tr style="border: 1px solid">
+						<th style="background-color: rgb(255, 255, 255)">상품명</th>
+						<th style="background-color: rgb(255, 255, 255)">상품 가격</th>
+						<th style="background-color: rgb(255, 255, 255)">상품 개수</th>
+					</tr>
+					<tr style="border: 1px solid">
+						<th>${product.productName}이름</th>
+						<td>${vproduct.productPrice}가격</td>
+						<td>${product.productQty}개수</td>
+					</tr>
+					<tr style="border: 1px solid">
+						<th>${product.productName}이름</th>
+						<td>${vproduct.productPrice}가격</td>
+						<td>${product.productQty}개수</td>
+					</tr>
+				</table>
+				<div class="center" style="margin-top: 20px; text-align: center;">
+					<form type="submit" action="/product/${product.productId}/updateForm" method="get">
+						<button style="width: 100px; height: 30px; margin-right: 20px; 
+							background-color: rgb(230, 160, 160); border-radius: 2.5em; ">수정하기</button>
+					</form>
 
-	</form>
-	<span>
-	<form action="/product/1/delete" method="post">
-		<button class="btn btn-danger">삭제하기</button>
-	</form>
-	</span>
-</div>
-<%@ include file="layout/footer.jsp"%>
+					<form type="submit" action="/product/${product.productId}/delete" method="post">
+						<button style="width: 100px; height: 30px; margin-right: 20px; 
+							background-color: rgb(230, 160, 160); border-radius: 2.5em; ">삭제하기</button>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<%@ include file="layout/footer.jsp" %>

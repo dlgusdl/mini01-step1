@@ -4,15 +4,15 @@
 <%@ include file="layout/header.jsp"%>
 
 <div class="container">
-	<form action="/product/1/update" method="post">
+	<form action="/product/1/updateForm" method="post">
 		<div class="mb-3 mt-3">
-			상품명 : <input id="name" name="productName" type="text" value="상품1">
+			상품명 : <input id="name" name="productName" type="text" value="${product.productName}">
 		</div>
 		<div class="mb-3 mt-3">
-			상품가격 : <input id="price" name="productPrice" type="text" value="상품가격1000">
+			상품가격 : <input id="price" name="productPrice" type="text" value="${product.productPrice}">
 		</div>
 		<div class="mb-3 mt-3">
-			상품수량 : <input id="qty"name="productQty"  type="text" value="재고">
+			상품수량 : <input id="qty"name="productQty"  type="text" value="${product.productQty}">
 		</div>
 		<button class="btn btn-primary">상품수정완료</button>
 		

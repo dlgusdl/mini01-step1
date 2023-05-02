@@ -14,5 +14,7 @@ public interface ProductRepository {
 
     public int update(Product product);
 
+    public Product findByName(String productName);
+
     public int deleteById(Integer productId);
 }
