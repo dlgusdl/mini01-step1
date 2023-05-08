@@ -9,26 +9,26 @@
 </select>
 
   <select id = "findById" resultType = "site.metacoding.firstapp.model.Product">
-        select * from product where product_id  = #{productId}
+        select * from product where id  = #{id}
     </select>
 
     <select id="findByName" resultType="site.metacoding.firstapp.model.Product">
-    select * from product where product_name = #{productName}
+    select name from product where name = #{name}
   </select>
 
   <insert id = "insert">
-        insert into product (product_name, product_price, product_qty, created_at) values (#{productName}, #{productPrice}, #{productQty}, now())
+        insert into product (name, price, qty, created_at) values (#{name}, #{price}, #{qty}, now())
     </insert>
 
   <update id = "update">
         update product set 
-        product_name = #{productName}, 
-        product_price = #{productPrice}, 
-        product_qty = #{productQty} where product_id  = #{productId}
+        name = #{name}, 
+        price = #{price}, 
+        qty = #{qty} where id  = #{id}
     </update>
 
   <delete id = "deleteById">
-        delete from product where product_id = #{productId}
+        delete from product where id = #{id}
     </delete>
 
 </mapper>

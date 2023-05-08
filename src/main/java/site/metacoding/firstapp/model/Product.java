@@ -3,22 +3,15 @@ package site.metacoding.firstapp.model;
 import java.sql.Timestamp;
 
 import lombok.Getter;
+import lombok.Setter;
 
+@Setter
 @Getter
 public class Product {
-    private Integer productId;
-    private String productName;
-    private Integer productPrice;
-    private Integer productQty;
+    private Integer id;
+    private String name;
+    private Integer price;
+    private Integer qty;
     private Timestamp createdAt;
-
-    public void setName(String name) {
-    }
-
-    public void setPrice(Integer price) {
-    }
-
-    public void setQty(Integer qty) {
-    }
 
 }

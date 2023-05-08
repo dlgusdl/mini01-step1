@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface ProductRepository {
-    public Product findById(Integer productId);
+    public Product findById(Integer id);
 
     public List<Product> findAll();
 
@@ -14,7 +14,12 @@ public interface ProductRepository {
 
     public int update(Product product);
 
-    public Product findByName(String productName);
+    public Product findByName(String name);
 
-    public int deleteById(Integer productId);
+    public int deleteById(Integer id);
+
+    // @Param으로 받는 방법
+    // public int update(@Param("id") Integer id, @Param("name") String name,
+    // @Param("price") Integer price,
+    // @Param("qty") Integer qty);
 }
